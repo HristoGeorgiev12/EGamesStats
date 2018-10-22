@@ -8,12 +8,17 @@ import { DataService } from '../../services/data.service';
 })
 export class ListingComponent implements OnInit {
 
+  jsonArray:object[];
+  bla:string;
+
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.dataService.getData().subscribe(post=> {
-      console.log(post);
-    })
+    this.bla = "as";
+    this.jsonArray = [];
+    this.dataService.getData().subscribe(val => this.jsonArray.push(val));
+    console.log(this.jsonArray);
+
   }
 
 
