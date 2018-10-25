@@ -2,9 +2,29 @@
   listing works!
 </p>
 
+<label for="searchbar">Searchbar: </label> 
+<input type="text" #searchbar>
+<button (click)="search(searchbar.value)">Search</button>
 
-{{bla}}
+<!-- <div *ngFor = "let i of displayInfo">
+  {{i.name}}
+</div> -->
 
-<div *ngFor = "let i of jsonArray">
-  {{i}}
-</div>
+<table>
+  <thead>
+    <tr>
+      <td (click)="func()">ID</td>
+      <td (click)="func()">NAME</td>
+      <td (click)="func()">ARMOR</td>
+      <td (click)="func()">ATTACKDAMAGE</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let i of displayInfo">
+      <td>{{i.id}}</td>
+      <td>{{i.name}}</td>
+      <td>{{i.armor}}</td>
+      <td>{{i.attackdamage}}</td>
+    </tr>
+  </tbody>
+</table>
